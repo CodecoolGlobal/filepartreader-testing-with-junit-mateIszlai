@@ -34,20 +34,20 @@ class FilePartReaderTest {
     public void testRead() throws IOException {
         FilePartReader filePartReader = new FilePartReader();
         filePartReader.setup("test.txt",1,5);
-        assertEquals("1aaaa\n2bbbb\n3cccc\n4dddd\n5eeee\n",filePartReader.read());
+        assertEquals("bb aaaa c\nbbbb cc\ndd cccc a\ndddd ee\neeee ff\n",filePartReader.read());
     }
 
     @Test
     public void testReadLineFromLine1ToLine1() throws IOException {
         FilePartReader filePartReader = new FilePartReader();
         filePartReader.setup("test.txt",1,1);
-        assertEquals("1aaaa",filePartReader.readLines());
+        assertEquals("bb aaaa c",filePartReader.readLines());
     }
 
     @Test
     public void testReadLineFrom1To4() throws IOException {
         FilePartReader filePartReader = new FilePartReader();
         filePartReader.setup("test.txt",1,4);
-        assertEquals("1aaaa\n2bbbb\n3cccc\n4dddd",filePartReader.readLines());
+        assertEquals("bb aaaa c bbbb cc dd cccc a dddd ee",filePartReader.readLines());
     }
 }

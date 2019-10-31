@@ -41,9 +41,9 @@ public class FilePartReader {
         String[] dataArray = data.split("\n");
         StringBuilder sb = new StringBuilder();
         for (int i = this.fromLine - 1; i < this.toLine; i++) {
-            sb.append(dataArray[i]).append("\n");
+            sb.append(dataArray[i]).append(" ");
         }
-        sb.deleteCharAt(sb.lastIndexOf("\n"));
+        sb.deleteCharAt(sb.lastIndexOf(" "));
         return sb.toString();
     }
 }
